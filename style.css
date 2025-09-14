@@ -1,4 +1,5 @@
 body{
+
     text-align:  center;
 }
 .btn{
@@ -29,4 +30,16 @@ body{
 }
 .userflash{
     background-color:pink;
+}
+
+h3{
+    color:rgb(97, 97, 252);
+    margin-top: 10px;
+}
+h4{
+    color: rgb(97, 97, 252);
+    margin-top: 20px;
+}
+span{
+    color: rgb(247, 80, 80);
 }

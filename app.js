@@ -1,3 +1,8 @@
+let h3= document.querySelector("h3");
+let h4 = document.querySelector("h4");
+let currentScore=0;
+let highScore=0;
+
 let gamSeq= [];
 let userSeq= [];
 let started = false;
@@ -9,6 +14,7 @@ let btns =["yellow", "green", "red", "blue"];
     console.log("game started");
     started= true;
     levelUp();
+   
    }
  });
  function btnFlash(btn){
@@ -27,8 +33,11 @@ let btns =["yellow", "green", "red", "blue"];
  }
  function levelUp(){
     userSeq=[];
+     h3.innerText = `Score : ${currentScore*10}`;
+    currentScore++;
+   
     level++;
-    h2.innerText= `Lever ${level}`;
+    h2.innerText= `Level ${level}`;
     let randIdx = Math.floor(Math.random()*4);
     let randColor= btns[randIdx];
     let randBtn= document.querySelector(`.${randColor}`);
@@ -44,7 +53,7 @@ let btns =["yellow", "green", "red", "blue"];
        }
     }
     else{
-        h2.innerHTML= `game over ! your score was <b>${level} </b> <br>press any key to restart`;
+        h2.innerHTML= `game over ! your score was <b>${currentScore*10-10} </b> <br>press any key to restart`;
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(function(){
          document.querySelector("body").style.backgroundColor = "white";
@@ -65,6 +74,12 @@ let btns =["yellow", "green", "red", "blue"];
     btn.addEventListener("click", btnPress);
  }
  function reset(){
+    if(currentScore > highScore)
+       {
+        h4.innerText= `High Score : ${(currentScore*10)-10}`;
+       }
+currentScore=0;
+
     gamSeq=[];
     userSeq=[];
     started= false;
