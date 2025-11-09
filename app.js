@@ -9,14 +9,23 @@ let started = false;
 let level=0;
 let h2= document.querySelector("h2");
 let btns =["yellow", "green", "red", "blue"];
- document.addEventListener("keypress", function(){
-   if(started== false){
-    console.log("game started");
-    started= true;
-    levelUp();
-   
+ function startGame() {
+   if(started === false){
+      console.log("game started");
+      started = true;
+      levelUp();
    }
- });
+}
+
+// For PC (keypress)
+document.addEventListener("keypress", startGame);
+
+// For Mobile (touch)
+document.addEventListener("touchstart", startGame);
+
+// For Click (Laptop / Mobile / Tablet)
+document.addEventListener("click", startGame);
+
  function btnFlash(btn){
     console.dir(btn);
     btn.classList.add("flash");
