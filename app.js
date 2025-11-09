@@ -1,4 +1,4 @@
-let h3= document.querySelector("h3");
+//mobile phone me jb tap kar raha hu to red ke sath flash and game over mai pura code deta hu js kalet h3= document.querySelector("h3");
 let h4 = document.querySelector("h4");
 let currentScore=0;
 let highScore=0;
